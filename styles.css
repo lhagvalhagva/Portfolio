@@ -89,6 +89,13 @@ nav a:hover {
   padding: 10px 20px;
   cursor: pointer;
   border-radius: 5px;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+}
+
+.subscribe-btn:hover {
+  background-color: #008ba3;
 }
 
 .intro {
