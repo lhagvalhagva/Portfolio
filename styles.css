@@ -40,6 +40,15 @@ nav {
 .logo {
   font-size: 24px;
   font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #333;
+}
+
+.logo i {
+  color: #00bcd4;
+  font-size: 28px;
 }
 
 nav ul {
@@ -83,10 +92,9 @@ nav a:hover {
 }
 
 .intro {
+  min-height: calc(100vh - 80px);
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 50px 20px;
 }
 
 .intro-content {
@@ -198,7 +206,8 @@ html {
 
 /* Section animations */
 section {
-  opacity: 0;
+  margin: 40px 0;
+  opacity: 1;
   transform: translateY(20px);
   transition: all 1s ease;
 }
@@ -496,11 +505,64 @@ section.visible {
   .projects-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .intro {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .intro-content {
+    padding-right: 0;
+  }
+
+  .intro-image {
+    margin-top: 20px;
+  }
+
+  .contact-content {
+    flex-direction: column;
+    gap: 20px;
+  }
 }
 
 @media (max-width: 768px) {
   .projects-grid {
     grid-template-columns: 1fr;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .contact-form {
+    padding: 20px;
+  }
+
+  .about-content,
+  .contact-content {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  h1,
+  h2 {
+    font-size: 1.8em;
+  }
+
+  .dynamic-text {
+    font-size: 1.5em;
+  }
+
+  .project-content h3,
+  .project-content p {
+    font-size: 1em;
+  }
+
+  .submit-btn {
+    padding: 10px 20px;
+    font-size: 14px;
   }
 }
 
@@ -512,4 +574,73 @@ h2 {
 
 .highlight {
   color: #00bcd4;
+}
+
+/* Mobile Menu Styles */
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #333;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  header {
+    padding: 15px 0;
+  }
+
+  nav {
+    position: relative;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 0 0 15px 15px;
+    z-index: 1000;
+  }
+
+  .nav-links.active {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .subscribe-btn {
+    display: none; /* Hide subscribe button on mobile */
+  }
+
+  nav ul li {
+    width: 100%;
+    text-align: center;
+  }
+
+  nav ul li a {
+    display: block;
+    padding: 10px;
+    font-size: 1.1em;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    font-size: 20px;
+  }
+
+  header {
+    padding: 10px 0;
+  }
 }
